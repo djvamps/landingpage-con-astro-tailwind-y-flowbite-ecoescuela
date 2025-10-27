@@ -1,0 +1,425 @@
+---
+// Carousel.astro
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/effect-coverflow";
+---
+
+<div class="carousel-container">
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="slide-content">
+          <img src="/images/eco_nino.jpg" alt="Niños aprendiendo ecología" />
+          <div class="slide-overlay">
+            <h3>Educación Ambiental</h3>
+            <p>Formando a las nuevas generaciones en el cuidado del planeta</p>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="slide-content">
+          <img src="/images/eco6.jpg" alt="Escuela sostenible" />
+          <div class="slide-overlay">
+            <h3>Escuelas Verdes</h3>
+            <p>Infraestructuras educativas comprometidas con el medio ambiente</p>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="slide-content">
+          <img src="/images/eco_escu.jpg" alt="Proyectos ecológicos" />
+          <div class="slide-overlay">
+            <h3>Proyectos Sostenibles</h3>
+            <p>Implementando soluciones ecológicas en la educación</p>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="slide-content">
+          <img src="/images/eco7.jpg" alt="Proyectos ecológicos" />
+          <div class="slide-overlay">
+            <h3>Proyectos Sostenibles</h3>
+            <p>Implementando soluciones ecológicas en la educación</p>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="slide-content">
+          <img src="/images/eco10.jpg" alt="Proyectos ecológicos" />
+          <div class="slide-overlay">
+            <h3>Proyectos Sostenibles</h3>
+            <p>Implementando soluciones ecológicas en la educación</p>
+          </div>
+        </div>
+      </div>
+<div class="swiper-slide">
+        <div class="slide-content">
+          <img src="/images/eco11.webp" alt="Proyectos ecológicos" />
+          <div class="slide-overlay">
+            <h3>Proyectos Sostenibles</h3>
+            <p>Implementando soluciones ecológicas en la educación</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <div class="slide-content">
+          <img src="/images/eco12.jpg" alt="Proyectos ecológicos" />
+          <div class="slide-overlay">
+            <h3>Proyectos Sostenibles</h3>
+            <p>Implementando soluciones ecológicas en la educación</p>
+          </div>
+        </div>
+      </div>
+    <div class="swiper-slide">
+        <div class="slide-content">
+          <img src="/images/eco9.jpg" alt="Proyectos ecológicos" />
+          <div class="slide-overlay">
+            <h3>Proyectos Sostenibles</h3>
+            <p>Implementando soluciones ecológicas en la educación</p>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="slide-content">
+          <img src="/images/eco5.jpg" alt="Comunidad ecológica" />
+          <div class="slide-overlay">
+            <h3>Comunidad Activa</h3>
+            <p>Uniendo esfuerzos por un futuro más verde</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Flechas de navegación -->
+    <div class="swiper-button-next">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="swiper-button-prev">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    
+    <!-- Paginación -->
+    <div class="swiper-pagination"></div>
+  </div>
+</div>
+
+<script is:inline type="module">
+  import Swiper from "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const swiper = new Swiper(".mySwiper", {
+      effect: "coverflow",
+      grabCursor: true,
+      centeredSlides: true,
+      loop: true,
+      slidesPerView: 1.2,
+      spaceBetween: 20,
+      breakpoints: {
+        640: { 
+          slidesPerView: 1.4,
+          spaceBetween: 25
+        },
+        768: { 
+          slidesPerView: 1.8,
+          spaceBetween: 30
+        },
+        1024: { 
+          slidesPerView: 2.2,
+          spaceBetween: 35
+        },
+        1200: { 
+          slidesPerView: 2.5,
+          spaceBetween: 40
+        },
+      },
+      coverflowEffect: {
+        rotate: 5,
+        stretch: 0,
+        depth: 80,
+        modifier: 1,
+        slideShadows: true,
+      },
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        dynamicBullets: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  });
+</script>
+
+<style>
+  :root { 
+    --primary-green: #00b894;
+    --dark-green: #00a085;
+    --white: #ffffff;
+    --gray-light: #f8f9fa;
+    --gray-dark: #2d3436;
+    --shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 12px 40px rgba(0, 0, 0, 0.15);
+  }
+
+  .carousel-container {
+    padding: 2rem 0;
+    background: linear-gradient(135deg, var(--gray-light) 0%, #e8f5e8 100%);
+  }
+
+  .swiper {
+    width: 100%;
+    max-width: 1400px;
+    height: 500px;
+    margin: 0 auto;
+    position: relative;
+    padding: 0 60px;
+  }
+
+  .swiper-wrapper {
+    align-items: center;
+  }
+
+  .swiper-slide {
+    border-radius: 20px;
+    overflow: hidden;
+    height: 400px;
+    transition: all 0.4s ease;
+    box-shadow: var(--shadow);
+    position: relative;
+  }
+
+  .swiper-slide-active {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-hover);
+  }
+
+  .slide-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .slide-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+  }
+
+  .swiper-slide:hover .slide-content img {
+    transform: scale(1.08);
+  }
+
+  .slide-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: var(--white);
+    padding: 2rem 1.5rem 1.5rem;
+    transform: translateY(10px);
+    opacity: 0;
+    transition: all 0.4s ease;
+  }
+
+  .swiper-slide-active .slide-overlay {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .slide-overlay h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--white);
+  }
+
+  .slide-overlay p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    line-height: 1.4;
+  }
+
+  /* Flechas de navegación - Mejoradas */
+  .swiper-button-next,
+  .swiper-button-prev {
+    position: absolute;
+    top: 50%;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--white);
+    color: var(--dark-green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow);
+    z-index: 10;
+    cursor: pointer;
+    transform: translateY(-50%);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid transparent;
+  }
+
+  .swiper-button-next {
+    right: 10px;
+  }
+
+  .swiper-button-prev {
+    left: 10px;
+  }
+
+  .swiper-button-next:hover,
+  .swiper-button-prev:hover {
+    background: var(--primary-green);
+    color: var(--white);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--white);
+  }
+
+  .swiper-button-next:active,
+  .swiper-button-prev:active {
+    transform: translateY(-50%) scale(0.95);
+  }
+
+  /* Ocultar los pseudo-elementos por defecto de Swiper */
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    content: none !important;
+  }
+
+  /* Paginación - Mejorada */
+  .swiper-pagination {
+    bottom: 20px !important;
+    z-index: 10;
+  }
+
+  .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background: var(--white);
+    opacity: 0.6;
+    transition: all 0.3s ease;
+    margin: 0 6px !important;
+  }
+
+  .swiper-pagination-bullet-active {
+    background: var(--primary-green);
+    opacity: 1;
+    transform: scale(1.2);
+  }
+
+  /* Responsive Design Mejorado */
+  @media (max-width: 1200px) {
+    .swiper {
+      padding: 0 50px;
+      height: 450px;
+    }
+    
+    .swiper-slide {
+      height: 380px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .carousel-container {
+      padding: 1.5rem 0;
+    }
+    
+    .swiper {
+      height: 400px;
+      padding: 0 40px;
+    }
+    
+    .swiper-slide {
+      height: 320px;
+    }
+    
+    .swiper-button-next,
+    .swiper-button-prev {
+      width: 48px;
+      height: 48px;
+    }
+    
+    .swiper-button-next {
+      right: 5px;
+    }
+    
+    .swiper-button-prev {
+      left: 5px;
+    }
+    
+    .slide-overlay {
+      padding: 1.5rem 1rem 1rem;
+    }
+    
+    .slide-overlay h3 {
+      font-size: 1.3rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .swiper {
+      height: 350px;
+      padding: 0 30px;
+    }
+    
+    .swiper-slide {
+      height: 280px;
+    }
+    
+    .swiper-button-next,
+    .swiper-button-prev {
+      width: 42px;
+      height: 42px;
+    }
+    
+    .slide-overlay h3 {
+      font-size: 1.1rem;
+    }
+    
+    .slide-overlay p {
+      font-size: 0.8rem;
+    }
+    
+    .swiper-pagination-bullet {
+      width: 10px;
+      height: 10px;
+      margin: 0 4px !important;
+    }
+  }
+
+  /* Animación de carga suave */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .carousel-container {
+    animation: fadeInUp 0.8s ease-out;
+  }
+</style>
+
+

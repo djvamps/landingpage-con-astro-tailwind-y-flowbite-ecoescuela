@@ -5,17 +5,23 @@ import Seccion  from '../components/Seccion.astro';
 import Solutions from '../components/Solutions.astro';
 import FAQ from '../components/FAQ.astro';
 import Miembros from '../components/Miembros.astro';
+import Carousel from '../components/Carousel.astro';
 import Actividades from '../components/Actividades.astro';
 import Newsletter from '../components/Newsletter.astro';
 import Cards from '../components/Cards.astro';
+import Mapa from '../components/Mapa.astro';
 import Footer from '../components/Footer.astro';
 
 ---
 <html lang="es">
   <head>
     <meta charset="utf-8" />
+
+    <link rel="icon" type="image/png" href="/images/logo_eco.png" />
     <title>Eco Escuela Soy Libre - Construyendo una nueva humanidad</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        
   </head>
   <body class="bg-green-50 text-gray-900 scroll-smooth">
     <Menu />
@@ -25,8 +31,10 @@ import Footer from '../components/Footer.astro';
     <Solutions />
     <FAQ />
     <Miembros />
+    <Carousel />
     <Actividades />
     <Newsletter />
+    <Mapa />
     <Footer />
   </body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.1.1/flowbite.min.js"></script>
