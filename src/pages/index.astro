@@ -1,41 +1,171 @@
 ---
-import Menu from '../components/Menu.astro';
-import Hero from '../components/Hero.astro';
-import Seccion  from '../components/Seccion.astro';
-import Solutions from '../components/Solutions.astro';
-import FAQ from '../components/FAQ.astro';
-import Miembros from '../components/Miembros.astro';
-import Carousel from '../components/Carousel.astro';
-import Actividades from '../components/Actividades.astro';
-import Newsletter from '../components/Newsletter.astro';
-import Cards from '../components/Cards.astro';
-import Mapa from '../components/Mapa.astro';
-import Footer from '../components/Footer.astro';
-
+import Menu from "../components/Menu.astro";
+import Hero from "../components/Hero.astro";
+import Nosotros from "../components/Nosotros.astro";
+import InteractiveTab from "../components/InteractiveTab.astro";
+import Miembros from "../components/Miembros.astro";
+import Carousel from "../components/Carousel.astro";
+import Actividades from "../components/Actividades.astro";
+import Cards from "../components/Cards.astro";
+import Contact from "../components/Contact.astro";
+import Mapa from "../components/Mapa.astro";
+import Footer from "../components/Footer.astro";
 ---
+
 <html lang="es">
   <head>
     <meta charset="utf-8" />
 
     <link rel="icon" type="image/png" href="/images/logo_eco.png" />
     <title>Eco Escuela Soy Libre - Construyendo una nueva humanidad</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        
+    <!-- Google Fonts - Poppins y Baloo Bhai 2 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Baloo+Bhai+2:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Meta tags para Open Graph -->
+    <meta property="og:title" content="Eco Escuela Soy Libre" />
+    <meta
+      property="og:description"
+      content="Construyendo una nueva humanidad"
+    />
+    <meta property="og:image" content="https://ecoescuelalibre.com/eco_w.jpg" />
+    <meta property="og:url" content="https://ecoescuelalibre.com/" />
+    <meta property="og:type" content="ecoescuelalibre.com" />
+
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        color: var(--negro);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: "Baloo Bhai 2", cursive;
+        font-weight: 700;
+      }
+
+      /* Botón flotante de WhatsApp */
+      .whatsapp-float {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 60px;
+        height: 60px;
+        background: #25d366;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+        cursor: pointer;
+        z-index: 9999;
+        transition: all 0.3s ease;
+        text-decoration: none;
+      }
+
+      .whatsapp-float:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 30px rgba(37, 211, 102, 0.7);
+      }
+
+      .whatsapp-float svg {
+        width: 35px;
+        height: 35px;
+        fill: white;
+      }
+
+      .whatsapp-tooltip {
+        position: absolute;
+        right: 70px;
+        background: var(--verde-oscuro);
+        color: white;
+        padding: 0.75rem 1.25rem;
+        border-radius: 10px;
+        white-space: nowrap;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+        font-weight: 600;
+        font-size: 0.9rem;
+      }
+
+      .whatsapp-float:hover .whatsapp-tooltip {
+        opacity: 1;
+      }
+
+      .whatsapp-tooltip::after {
+        content: "";
+        position: absolute;
+        right: -8px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 0;
+        height: 0;
+        border-left: 8px solid var(--verde-oscuro);
+        border-top: 8px solid transparent;
+        border-bottom: 8px solid transparent;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .whatsapp-float {
+          bottom: 20px;
+          right: 20px;
+          width: 55px;
+          height: 55px;
+        }
+
+        .whatsapp-float svg {
+          width: 30px;
+          height: 30px;
+        }
+
+        .whatsapp-tooltip {
+          display: none;
+        }
+      }
+    </style>
   </head>
   <body class="bg-green-50 text-gray-900 scroll-smooth">
     <Menu />
     <Hero />
-    <Seccion />
+    <Nosotros />
+    <InteractiveTab />
     <Cards />
-    <Solutions />
-    <FAQ />
     <Miembros />
     <Carousel />
     <Actividades />
-    <Newsletter />
+    <Contact />
     <Mapa />
     <Footer />
+
+    <!-- Botón flotante de WhatsApp -->
+    <a
+      href="https://wa.me/51973172074?text=Hola%2C%20me%20gustaría%20obtener%20más%20información%20sobre%20Eco%20Escuela%20Soy%20Libre"
+      class="whatsapp-float"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Contactar por WhatsApp"
+    >
+      <span class="whatsapp-tooltip">¡Escríbenos por WhatsApp!</span>
+      <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.37 5.173 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.467c-2.482 0-4.908-0.646-7.07-1.87l-0.507-0.292-5.247 1.408 1.417-5.267-0.316-0.522c-1.314-2.178-2.010-4.688-2.010-7.257 0-7.384 6.050-13.6 13.6-13.6s13.6 6.050 13.6 13.6-6.050 13.6-13.6 13.6zM21.8 18.267c-0.397-0.2-2.348-1.158-2.713-1.29s-0.628-0.2-0.893 0.2c-0.265 0.397-1.025 1.29-1.257 1.557s-0.463 0.298-0.86 0.1c-0.398-0.2-1.677-0.618-3.195-1.973-1.182-1.053-1.98-2.353-2.212-2.75s-0.025-0.613 0.175-0.81c0.18-0.178 0.397-0.463 0.596-0.695s0.265-0.397 0.397-0.662c0.132-0.265 0.066-0.497-0.033-0.695s-0.893-2.15-1.223-2.945c-0.322-0.776-0.649-0.67-0.893-0.683-0.231-0.012-0.496-0.015-0.76-0.015s-0.695 0.1-1.058 0.497c-0.364 0.397-1.388 1.357-1.388 3.308s1.421 3.836 1.62 4.102c0.199 0.265 2.799 4.275 6.781 5.995 0.948 0.411 1.688 0.655 2.265 0.839 0.955 0.303 1.824 0.26 2.512 0.158 0.766-0.115 2.348-0.96 2.679-1.888s0.331-1.723 0.232-1.888c-0.1-0.166-0.364-0.265-0.76-0.463z"
+        ></path>
+      </svg>
+    </a>
   </body>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.1.1/flowbite.min.js"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.1.1/flowbite.min.js"
+  ></script>
 </html>
